@@ -22,14 +22,14 @@ function App() {
   ];
   const [todoItems, setTodoItems] = useState(initialtodoItems);
   const handleNewItem = (itemName, itemDueDate) => {
-    const newTodoItems = [
-      ...todoItems,
-      { name: itemName, duedate: itemDueDate },
-    ];
-    setTodoItems(newTodoItems)
+    setTodoItems((currValue)=>[//todoItems me hi add ho rha he called functional update 
+    ...currValue,
+    { name: itemName, duedate: itemDueDate },
+
+   ] )
   };
   const handleDeeleteItem=(todoItemName)=>{
-const newTodoItems=todoItems.filter(item=>item.name!==todoItemName)//me chahta hu jo equal he wo delete ho jaye bali to reh jaye 
+const newTodoItems=todoItems.filter(item=>item.name!==todoItemName)//me chahta hu jo equal he wo delete ho jaye baki to reh jaye 
 setTodoItems(newTodoItems)
 
 
